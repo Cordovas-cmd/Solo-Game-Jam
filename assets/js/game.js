@@ -5,7 +5,7 @@ var playerOneMoney = 10;
 var playerName;
 
 var player1 = {
-    name: "",
+    name: null,
     hitpoints: 100,
     attack: 10,
     money: 10,
@@ -59,20 +59,37 @@ function fight() {
         }
         // if player choses to skip
     } else if (promptFight === "skip" || promptFight === "SKIP") {
-        window.alert(player1.name + " has chosen to skip the fight!");
-    } else {
-        window.alert("You need to choose a valid option. Try again!");
-        fight()
+        var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+        // if yes (true), leave fight
+        if (confirmSkip) {
+
+            window.alert(player1.name + " has chosen to skip the fight!");
+            player1.money = player1.money - 2;
+            console.log(player1.money);
+        } 
+    else {
+        fight();
+    }}
+        else{
+            window.alert("You need to choose a valid option. Try again!");
+            fight()  
+        }
     }
 
-}
+
 function init() {
     player1.name = window.prompt("What is your robot's name?");
-// console.log(playerName);
-console.log(player1);
-window.alert("Welcome to Robot Gladiators!");
+    if(player1.name === "") {
+        alert("HOW DARE YOU NOT GIVE YOUR ROBOT A NAME ;-; Try again!")
+      init()
+    }
+    else {
+        console.log(player1);
+        window.alert("Welcome to Robot Gladiators!");
+        fight()
+    }
+    // console.log(playerName);
 
-fight()
 }
 
 init()
