@@ -7,8 +7,14 @@ var player1 = {
     money: 10,
 }
 var player2 = {
-    hitpoints:50,
-    attack:12,
+    hitpoints: 50,
+    attack: 12,
 }
 
-window.alert("This is an alert! JavaScript is running!");
+var playerName = window.prompt("What is your robot's name?");
+console.log(playerName)
+
+function fight() {
+    window.alert("The fight has begun!");
+}
+// fight();
