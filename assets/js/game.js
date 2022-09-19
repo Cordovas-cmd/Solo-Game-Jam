@@ -31,7 +31,7 @@ function fight() {
 
     console.log(
         player1.name + " attacked " + player2.name + ". " + player2.name + " now has " + player2.hitpoints + " health remaining."
-      );
+    );
 
     // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
 
@@ -41,6 +41,20 @@ function fight() {
 
     console.log(
         player2.name + " attacked " + player1.name + ". " + player1.name + " now has " + player1.hitpoints + " health remaining."
-      );
+    );
+    // check player's health
+    if (player1.hitpoints <= 0) {
+        window.alert(player1.name + " has died!");
+    }
+    else {
+        window.alert(player1.name + " still has " + player1.hitpoints + " health left.");
+    }
+    // check enemy's health
+    if (player2.hitpoints <= 0) {
+        window.alert(player2.name + " has died!");
+    }
+    else {
+        window.alert(player2.name + " still has " + player2.hitpoints + " health left.");
+    }
 }
 fight();
