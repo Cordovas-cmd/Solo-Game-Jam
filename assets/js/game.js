@@ -4,6 +4,9 @@ var playerOneAtk = 10;
 var playerOneMoney = 10;
 var playerName;
 
+var enemyNames = ["Roberto","Amy Android", "RoboCop"];
+console.log(enemyNames);
+console.log(enemyNames[0]);
 var player1 = {
     name: null,
     hitpoints: 100,
@@ -93,3 +96,9 @@ function init() {
 }
 
 init()
+
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+//     Fight all enemy-robots
+//     Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
